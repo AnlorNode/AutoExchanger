@@ -1,7 +1,7 @@
 # my_mongo
-git clone https://github.com/slonik6663444/adspoiler.git
+git clone https://github.com/slonik6663444/AutoExchanger.git
 
-cd ./adspoiler
+cd ./AutoExchanger
 
 app `npm i`
 
