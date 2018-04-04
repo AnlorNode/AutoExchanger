@@ -9,11 +9,16 @@ function handler(req, res) {
   file.serve(req, res, function name(err, dt) {
     if (err) {
       console.log(req.url, "err")
-      var S_tream = fs.createReadStream("./public/index.html").pipe(res)
-      S_tream.on('close', function () {
+      try {
+        var S_tream = fs.createReadStream("./public/index.html").pipe(res)
+        S_tream.on('close', function () {
+          res.end();
+          return;
+        })
+      } catch (error) {
         res.end();
-        return;
-      })
+      }
+
     };
   });
 }
