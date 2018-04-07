@@ -22,6 +22,8 @@ function handler(req, res) {
     };
   });
 }
+console.log("open port:",port);
+
 // io.on("connection", function (socket) {
 //   socket.on("shipped", function (data) {
 
