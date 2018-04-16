@@ -8,19 +8,15 @@ app.listen(port);
 function handler(req, res) {
   file.serve(req, res, function name(err, dt) {
     if (err) {
-      console.log(req.url, "err")
-      try {
-        var S_tream = fs.createReadStream("./public/index.html").pipe(res)
+      console.log(req.url, "url")
+        var S_tream = fs.createReadStream(__dirname+"/public/index.html").pipe(res)
         S_tream.on('close', function () {
           res.end();
           return;
         })
-      } catch (error) {
-        res.end();
-      }
-
     };
   });
+
 }
 console.log("open port:",port);
 
