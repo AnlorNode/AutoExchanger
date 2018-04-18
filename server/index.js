@@ -11,14 +11,15 @@ if (req.url==="/") {
       return;
     })
 } else {
-  if (fs.existsSync(__dirname+req.url)) {
-    var S_tream = fs.createReadStream(__dirname+req.url).pipe(res)
+
+  if (fs.existsSync(__dirname+"/public"+req.url)) {
+    var S_tream = fs.createReadStream(__dirname+"/public"+req.url).pipe(res)
     S_tream.on('close', function () {
       res.end();
       return;
     })
   } else {
-    console.log(req.url,"err");
+    console.log(__dirname+"/public"+req.url,"err")
     res.end();
   }
 }
